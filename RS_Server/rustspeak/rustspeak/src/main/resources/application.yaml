@@ -1,0 +1,25 @@
+server:
+  port: 37011
+spring:
+  main:
+    web-application-type: reactive
+    allow-bean-definition-overriding: true
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      username: root
+      password: secret
+
+    redis:
+      host: localhost
+      port: 6379
+      jedis:
+        pool:
+          max-active: 8
+          max-idle: 8
+
+logging:
+  config: classpath:logback-spring.xml
+  level:
+    com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver: WARN
